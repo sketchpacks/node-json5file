@@ -4,6 +4,7 @@ try {
 } catch (_) {
   _fs = require('fs')
 }
+var JSON5 = require('json5')
 
 function readFile (file, options, callback) {
   if (callback == null) {
@@ -33,7 +34,7 @@ function readFile (file, options, callback) {
 
     var obj
     try {
-      obj = JSON.parse(data, options ? options.reviver : null)
+      obj = JSON5.parse(data, options ? options.reviver : null)
     } catch (err2) {
       if (shouldThrow) {
         err2.message = file + ': ' + err2.message
@@ -66,7 +67,7 @@ function readFileSync (file, options) {
   try {
     var content = fs.readFileSync(file, options)
     content = stripBom(content)
-    return JSON.parse(content, options.reviver)
+    return JSON5.parse(content, options.reviver)
   } catch (err) {
     if (shouldThrow) {
       err.message = file + ': ' + err.message
