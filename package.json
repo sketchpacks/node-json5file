@@ -1,10 +1,10 @@
 {
-  "name": "jsonfile",
+  "name": "json5file",
   "version": "3.0.0",
-  "description": "Easily read/write JSON files.",
+  "description": "Easily read JSON5 and write JSON files.",
   "repository": {
     "type": "git",
-    "url": "git@github.com:jprichardson/node-jsonfile.git"
+    "url": "git@github.com:sketchpacks/node-json5file.git"
   },
   "keywords": [
     "read",
@@ -16,7 +16,9 @@
   ],
   "author": "JP Richardson <jprichardson@gmail.com>",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "json5": "^0.5.1"
+  },
   "optionalDependencies": {
     "graceful-fs": "^4.1.6"
   },
